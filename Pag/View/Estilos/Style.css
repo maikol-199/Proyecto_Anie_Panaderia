@@ -1,0 +1,29 @@
+
+.cj_bt{
+ display: flex;
+ padding: 15px;
+ margin-left: 350px;
+}
+#btnbuscar{
+    margin-left: 10px;
+    
+}
+#bod{
+    background-color: rgb(199, 207, 207);
+}
+h5{
+    display: flex;
+}
+.a1{
+    position: relative;
+    border: solid 1px grey;
+}
+.d{
+    margin: auto;
+    
+    height: 25pc;
+    width: 60pc;
+}
+#g{
+    height: 200px;
+}
