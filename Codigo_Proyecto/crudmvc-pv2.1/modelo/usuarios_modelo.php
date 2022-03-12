@@ -14,7 +14,7 @@ class usuarios_modelo{
                     $datos["usu_apellido"]  , 
                     $datos["usu_telefono"]  , 
                     $datos["usu_usuario"]   , 
-                    $datos["usu_contraseña"], 
+                    sha1($datos["usu_contraseña"]), 
                     $datos["usu_fecha"]     , 
                     $datos["usu_email"]     ,
                     $datos["usu_rol"]       );
@@ -74,4 +74,28 @@ public static function mdlEditar($datos){
              );
     return $s->execute($v);
 }
+
+public static function mdlValidar($password){
+    $i   = new Conexion();
+    $c   = $i->getConexion();
+    $sql = "SELECT * FROM usuarios where Usu_Contraseña =  ? and Usu_Cedula = ?";
+    $s   = $c->prepare($sql);
+    $v   = array(sha1($password), $_SESSION["cedula"]);
+    $s->execute($v);
+    return $s->rowCount();
+}
+
+public static function mdlEditarCon($password){
+    $i   = new Conexion();
+    $c   = $i->getConexion();
+
+    $sql = "UPDATE usuarios SET Usu_Contraseña =  ? WHERE Usu_Cedula = ?";
+    
+    $s   = $c->prepare($sql);
+    $v   = array(sha1($password), $_SESSION["cedula"]);
+    $s->execute($v);
+    return $s->rowCount();
+}
+
+
 }

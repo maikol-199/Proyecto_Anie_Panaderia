@@ -65,5 +65,30 @@ class usuarios_controlador{
             echo json_encode(array("mensaje"=>" Error al Eliminar"));
         }
     }
+
+    public function frmEditarContra(){
+        $this->vista->estructura("usuarios/frmEditarContra");
+    }
+
+    public function editarContra(){
+        extract($_POST);
+        $r   = usuarios_modelo::mdlValidar($con_actual);
+		if($r > 0){
+            if($con_nueva == $con_confirmar){
+                $r   = usuarios_modelo::mdlEditarCon($con_nueva);
+                if($r > 0){
+                    echo json_encode(array("mensaje"=>" Exitoso", "icono"=>"success"));
+                }else{
+                    echo json_encode(array("mensaje"=>" ooo", "icono"=>"error"));
+                } 
+            }else{
+                echo json_encode(array("mensaje"=>" Error f", "icono"=>"error"));
+            }
+            
+        } else{
+            echo json_encode(array("mensaje"=>" No coinside", "icono"=>"error"));
+        }
+    }
+
     public function listar(){}
 }

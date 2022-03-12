@@ -23,15 +23,24 @@ class inicio_controlador{
         extract($_POST);
         $r = inicio_modelo::mdlValidar($usuario, $contrasena);
 
-        $_SESSION["nombre"]    = $r["Usu_Nombre"];
-        $_SESSION["apellido"]  = $r["Usu_Apellido"];
-        $_SESSION["rol"]       = $r["Usu_Rol"];
+    
         if(is_array($r)){
+
+                $_SESSION["nombre"]    = $r["Usu_Nombre"];
+                $_SESSION["apellido"]  = $r["Usu_Apellido"];
+                $_SESSION["rol"]       = $r["Usu_Rol"];
+                $_SESSION["cedula"]    = $r["Usu_Cedula"];
+
             echo json_encode(array("mensaje"=>" Esta encontrado", "icono"=>"success"));
             
         } else{
             echo json_encode(array("mensaje"=>" Usuario/contraseña incorrectos", "icono"=>"error"));
         }
+    }
+
+    public function cerrar(){
+        session_destroy();
+        header("location: ?controlador=inicio&accion=frmLogin");
     }
 
 }
