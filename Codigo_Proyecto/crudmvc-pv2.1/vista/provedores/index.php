@@ -9,7 +9,8 @@
             <div class="card-body">
 
 
-                    <a class="btn btn-primary" href="?controlador=provedores&accion=frmRegistrar">Registrar Proveedores</a> <br>
+                    <a class="btn btn-primary" href="?controlador=provedores&accion=frmRegistrar">Registrar Proveedores</a>
+                    <a class="btn btn-primary" href="?controlador=provedor&accion=frmConsultar">Consultar</a> <br>
                     <h2>Listado de Proveedores</h2>
 
                     <table class="table align-items-center mb-0">

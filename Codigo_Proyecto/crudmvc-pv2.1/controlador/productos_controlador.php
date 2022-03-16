@@ -64,6 +64,58 @@ class productos_controlador{
         }
     }
 
+    public function frmConsultar(){
+        $this->vista->estructura("productos/frmConsultar");
+    }
+
+    public function consultar(){
+        $codigo = $_POST["codigo"];
+        $r      = productos_modelo::mdlConsultar($codigo);
+        $tabla  = ' <table class="table align-items-center mb-0">
+        <tr>
+        <th>Id Producto</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+        <th>Detalle</th>
+        <th>Descripcion</th>
+        <th>Estado</th>
+        <th></th>
+        <th></th>
+        </tr>';
+        foreach ($r as $valor){
+
+            $cod = $valor["Pro_Id_Producto"];
+            $tabla.= "<tr>";
+            $tabla.=  "<td>".$valor["Pro_Id_Producto"]."</td>";
+            $tabla.=  "<td>".$valor["Pro_Nombre"]."</td>";
+            $tabla.=  "<td>".$valor["Pro_Precio"]."</td>";
+            $tabla.=  "<td>".$valor["Pro_Cat_Id_Categoria"]."</td>";
+            $tabla.=  "<td>".$valor["Pro_Detalle"]."</td>";
+            $tabla.=  "<td>".$valor["Pro_Descripcion"]."</td>";
+            $tabla.= "<td>".$valor["Pro_Estado"]."</td>";
+            $tabla.=  "<td>
+                            <a href='?controlador=productos&accion=frmEditar&cod=$cod'>Editar</a>
+                            </td>";
+                            $tabla.=  "<td>
+                            <a href='?controlador=productos&accion=eliminar&cod=$cod'class='eliminar'>Eliminar</a>
+                            </td>";
+                            $tabla.= "</tr>";
+        }
+        echo json_encode(array("tabla"=>$tabla));
+    }
+
+    
+
+   
+      
+            
+    
+
+
+
+
+
 }
 
 ?>

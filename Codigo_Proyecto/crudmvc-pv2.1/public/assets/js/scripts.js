@@ -73,7 +73,9 @@ $(function () {
 
     $('#codigo').keyup(function(){
            var codigo = $(this).val();
-           var url    = "?controlador=categoria&accion=consultar";
+           var url = $('#frmConsultar').attr("action");
+           
+           //var url    = "?controlador=categoria&accion=consultar";
 
            if (codigo.length > 0) {
 

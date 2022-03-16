@@ -11,6 +11,7 @@
 
 
                 <a class="btn btn-primary" href="?controlador=productos&accion=frmRegistrar">Registrar Productos</a>
+                <a class="btn btn-primary" href="?controlador=productos&accion=frmConsultar">Consultar</a> <br>
                 <h2>Listado de Productos</h2>
 
                 <table class="table align-items-center mb-0">

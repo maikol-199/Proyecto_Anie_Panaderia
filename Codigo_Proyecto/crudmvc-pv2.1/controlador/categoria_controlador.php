@@ -95,6 +95,11 @@ class categoria_controlador{
         echo json_encode(array("tabla"=>$tabla));
     }
 
+    public function reporteCategoria(){
+        $datos= categoria_modelo::mdlListado();
+        require_once "vista/categoria/reporteCategoria.php";
+    }
+
 }
 
 ?>

@@ -46,7 +46,7 @@
                             <label for="exampleFormControlSelect1" class="ms-0">Tipo Usuario</label>
                             <select class="form-control" name="usu_rol">
                                 <option value="Administrador">Administrador</option>
-                                <option value="Usuario">Trabajador</option>
+                                <option value="Trabajador">Trabajador</option>
                                 <option value="Cliente">Cliente</option>
                             </select>
                         </div>

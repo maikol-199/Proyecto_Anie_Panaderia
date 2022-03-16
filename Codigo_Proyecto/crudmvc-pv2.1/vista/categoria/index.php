@@ -11,7 +11,8 @@
 
 
                 <a class="btn btn-primary" href="?controlador=categoria&accion=frmRegistrar">Registrar Categoria</a>
-                <a class="btn btn-primary" href="?controlador=categoria&accion=frmConsultar">Consultar</a> <br>
+                <a class="btn btn-primary" href="?controlador=categoria&accion=frmConsultar">Consultar</a> 
+                <a class="btn btn-primary" href="?controlador=categoria&accion=reporteCategoria">Reportes</a> <br>
                 <h2>Listado de Categoria</h2>
 
                 <table class="table align-items-center mb-0">

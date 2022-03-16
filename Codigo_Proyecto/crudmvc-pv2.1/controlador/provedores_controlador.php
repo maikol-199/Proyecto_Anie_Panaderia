@@ -55,6 +55,12 @@ class provedores_controlador{
             echo json_encode(array("mensaje"=>" Error al Eliminar"));
         }
     }
+
+    public function frmConsultar(){
+        $this->vista->estructura("categoria/frmConsultar");
+        
+    }
+
     public function listar(){}
 }
 

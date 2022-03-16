@@ -45,6 +45,17 @@ class productos_modelo{
         $s->execute($v);
         return $s->fetch();
     }
+    public static function mdlConsultar($codigo){
+        $i   = new Conexion();
+        $c   = $i->getConexion();
+        $sql = "SELECT * FROM productos WHERE pro_id_producto LIKE '$codigo%'";
+        $s   = $c->prepare($sql);
+        $v   =array($codigo);
+        $s->execute();
+        return $s->fetchAll();
+    }
+
+
     public static function mdlEditar($datos){
         $i = new Conexion();
         $c = $i->getConexion();

@@ -9,7 +9,8 @@
             <div class="card-body">
 
 
-                    <a class="btn btn-primary" href="?controlador=usuarios&accion=frmRegistrar">Registrar Usuarios</a> <br>
+                    <a class="btn btn-primary" href="?controlador=usuarios&accion=frmRegistrar">Registrar Usuarios</a>
+                    <a class="btn btn-primary" href="?controlador=usuarios&accion=frmConsultar">Consultar</a> <br>
                     <h2>Listado de Usuarios</h2>
 
                     <table class="table align-items-center mb-0">

@@ -97,5 +97,15 @@ public static function mdlEditarCon($password){
     return $s->rowCount();
 }
 
+public static function mdlConsultar($codigo){
+    $i   = new Conexion();
+    $c   = $i->getConexion();
+    $sql = "SELECT * FROM usuarios WHERE Usu_Cedula LIKE '$codigo%'";
+    $s   = $c->prepare($sql);
+    $v   =array($codigo);
+    $s->execute();
+    return $s->fetchAll();
+}
+
 
 }
