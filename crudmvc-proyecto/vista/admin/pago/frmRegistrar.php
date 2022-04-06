@@ -30,8 +30,8 @@
 
                     <div class="input-group input-group-outline my-3">
                     <label class="form-label"></label>
-                    <input type="text" name="pag_comprobante" class="form-control">
-                    </div>
+                    <input type="file" name="pag_comprobante" class="form-control">
+                    </div>  
                    
                     <input class="btn btn-primary" type="submit" name="Aceptar"><br>
                 </form>

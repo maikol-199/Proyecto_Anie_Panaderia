@@ -91,3 +91,9 @@ body {
     margin-top: 7rem;
   }
 }
+
+.texto-encima{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

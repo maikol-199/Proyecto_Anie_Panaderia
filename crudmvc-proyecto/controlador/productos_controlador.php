@@ -14,23 +14,41 @@ class productos_controlador{
         $this->vista->cat = categoria_modelo::mdlListado();
         $this->vista->estructura("productos/frmRegistrar",true);
     }
+
+    public function realizarPedido(){
+       $id =  json_encode($_POST["id"]);
+        var_dump($id);
+       $cantidad =  json_encode($_POST["cantidad"]);
+        var_dump($cantidad);
+    }
+
+   
+
     public function registrar(){
         extract($_POST);
-        $datos["pro_id_producto"]     = $pro_id_producto;
-        $datos["pro_nombre"]          = $pro_nombre;
-        $datos["pro_precio"]          = $pro_precio;
-        $datos["pro_cat_id_categoria"]   = $pro_cat_id_categoria;
-        $datos["pro_detalle"]    = $pro_detalle;
-        $datos["pro_descripcion"] = $pro_descripcion;
-        $datos["pro_estado"]      = $pro_estado;
-        $r                       = productos_modelo::mdlRegistrar($datos);
-        if($r > 0){
+        $foto_producto = $_FILES["Pro_Foto_Producto"]["name"];
+        $archivo_tmp = $_FILES["Pro_Foto_Producto"]["tmp_name"];
+        $fecha = date("Ymd_His");
+        $foto_producto = $fecha.".".$foto_producto;
+
+        $datos["pro_id_producto"]       = $pro_id_producto;
+        $datos["pro_nombre"]            = $pro_nombre;
+        $datos["pro_precio"]            = $pro_precio;
+        $datos["pro_cat_id_categoria"]  = $pro_cat_id_categoria;
+        $datos["pro_detalle"]           = $pro_detalle;
+        $datos["pro_descripcion"]       = $pro_descripcion;
+        $datos["pro_estado"]            = $pro_estado;
+        $datos["pro_foto_producto"]     = $foto_producto; 
+        if(move_uploaded_file($archivo_tmp, "public/assets/img/fotos_productos/$foto_producto")) {
+            $r                          = productos_modelo::mdlRegistrar($datos);
             if($r > 0){
-                // echo "Registro exitoso!";
-                echo json_encode(array("mensaje"=>"Registro Exitoso", "icono"=>"success"));
+                echo json_encode(
+                    array("mensaje"=>"Registro Exitoso", "icono"=>"success")
+                );
             }
-         }
+        }
     }
+
     public function frmEditar(){
         $cod = $_GET["cod"];
         $this->vista->cat = categoria_modelo::mdlListado();
@@ -104,17 +122,6 @@ class productos_controlador{
         }
         echo json_encode(array("tabla"=>$tabla));
     }
-
-    
-
-   
-      
-            
-    
-
-
-
-
 
 }
 

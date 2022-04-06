@@ -1,5 +1,6 @@
 <?php
 require_once "modelo/inicio_modelo.php";
+require_once "modelo/productos_modelo.php";
 class inicio_controlador{
 
     public function __construct(){
@@ -8,11 +9,17 @@ class inicio_controlador{
     
     public function index(){
         if (!isset($_SESSION["nombre"])) {
+            
+            $this->vista->con = true;
+            $this->vista->datos= productos_modelo::mdlListado();
             $this->vista->estructura("inicio/index");
         }else{
             if($_SESSION["rol"]=="Cliente"){
+                $this->vista->datos= productos_modelo::mdlListado();
+                $this->vista->con = true;
                 $this->vista->estructura("inicio/index");
             }else{
+                $this->vista->datos= productos_modelo::mdlListado();
                 $this->vista->estructura("inicio/principal",true);
             }
         }
@@ -20,8 +27,36 @@ class inicio_controlador{
 
 
     public function frmLogin(){
-       // $this->vista->estructura("inicio/frmlogin");
         require_once "vista/admin/inicio/frmlogin.php";
+    }
+
+    public function frmListarProUsu(){
+        $this->vista->datos= productos_modelo::mdlListado();
+        $this->vista->con = false;
+        $this->vista->estructura("inicio/ListarProductosUsu");
+        // require_once "vista/inicio/ListarProductosUsu.php";
+    }
+
+    public function CarritoCompra(){
+        
+        $this->vista->con = false;
+        $this->vista->estructura("inicio/CarritoCompra");
+    }
+
+    public function frmRegUsu(){
+        require_once "vista/inicio/frmRegUsu.php";
+    }
+
+    public function RegistroPedido(){
+        
+        $this->vista->con = false;
+        if(isset($_SESSION["rol"])){
+            $this->vista->estructura("inicio/RegistroPedido");
+        }else{
+            header("location: ?controlador=inicio&accion=frmLogin");  
+        }
+        
+
     }
 
     public function validar(){
@@ -45,7 +80,7 @@ class inicio_controlador{
 
     public function cerrar(){
         session_destroy();
-        header("location: ?controlador=inicio&accion=frmLogin");
+        header("location: ?controlador=inicio&accion=index");
     }
 
 }

@@ -23,13 +23,14 @@
                         <th>Detalle</th>
                         <th>Descripcion</th>
                         <th>Estado</th>
-                        <th></th>
+                        <th>Foto Producto</th>
                         <th></th>
                     </tr>
 
                     <?php
                         foreach ($this->datos as $valor){
                             $cod = $valor["Pro_Id_Producto"];
+                            $foto = $valor["Pro_Foto_Producto"];
                             echo "<tr>";
                                 echo  "<td>".$valor["Pro_Id_Producto"]."</td>";
                                 echo  "<td>".$valor["Pro_Nombre"]."</td>";
@@ -38,6 +39,7 @@
                                 echo  "<td>".$valor["Pro_Detalle"]."</td>";
                                 echo  "<td>".$valor["Pro_Descripcion"]."</td>";
                                 echo  "<td>".$valor["Pro_Estado"]."</td>";
+                                echo  "<td><img src='public/assets/img/fotos_productos/$foto' width='110%'</td>";
                                 echo  "<td>
                                     <a class='btn btn-primary' href='?controlador=productos&accion=frmEditar&cod=$cod'>Editar</a>
                                     </td>";

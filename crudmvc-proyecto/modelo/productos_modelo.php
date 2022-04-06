@@ -5,9 +5,9 @@ class productos_modelo{
         $i = new Conexion();
         $c = $i->getConexion();
         $sql = "INSERT INTO productos
-                (pro_id_producto, pro_nombre, pro_precio, pro_cat_id_categoria, pro_detalle, pro_descripcion, pro_estado)
+                (pro_id_producto, pro_nombre, pro_precio, pro_cat_id_categoria, pro_detalle, pro_descripcion, pro_estado, pro_foto_producto)
                 VALUES
-                ( ? , ? , ? , ? , ? , ? , ? )";
+                ( ? , ? , ? , ? , ? , ? , ? , ?)";
         $s = $c->prepare($sql);
         $v = array( $datos["pro_id_producto"]    , 
                     $datos["pro_nombre"]    , 
@@ -15,7 +15,9 @@ class productos_modelo{
                     $datos["pro_cat_id_categoria"]  , 
                     $datos["pro_detalle"]   , 
                     $datos["pro_descripcion"], 
-                    $datos["pro_estado"]    );
+                    $datos["pro_estado"] ,
+                    $datos["pro_foto_producto"]   
+                );
         return $s->execute($v);
     }
 

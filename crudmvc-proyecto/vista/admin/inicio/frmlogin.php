@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Material Dashboard 2 - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,17 +68,13 @@
                     <label class="form-label">Contraseña</label>
                     <input type="password" name="contrasena" class="form-control">
                   </div>
-                  <div class="form-check form-switch d-flex align-items-center mb-3">
-                    <input class="form-check-input" type="checkbox" id="rememberMe">
-                    <label class="form-check-label mb-0 ms-2" for="rememberMe">Recuérdame</label>
-                  </div>
                   <div class="text-center">
                     <!-- <i type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</button> -->
                     <input class="btn btn-primary" type="submit" name="Aceptar">
                   </div>
                   <p class="mt-4 text-sm text-center">
                     No estás Registrado?
-                    <a href="../pages/sign-up.html" class="text-primary text-gradient font-weight-bold">Registrate aquí</a>
+                    <a href="?controlador=inicio&accion=frmRegUsu" class="text-primary text-gradient font-weight-bold">Registrate aquí</a>
                   </p>
                 </form>
               </div>

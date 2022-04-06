@@ -9,7 +9,7 @@
             <div class="card-body">
 
 
-                <form action="?controlador=productos&accion=registrar" method="post" id="frmRegistrar">
+                <form action="?controlador=productos&accion=registrar" method="post" id="Pro_Foto_Producto" enctype="multipart/form-data">
                     <div class="input-group input-group-outline my-3">
                         <label class="form-label">Id Producto</label>
                         <input type="number" name="pro_id_producto" class="form-control">
@@ -46,6 +46,10 @@
                             <option value="Interno">Interno</option>
                             <option value="Externo">Externo</option>
                         </select>
+                    </div>
+                    <div class="input-group input-group-outline my-3">
+                        <label class="form-label"></label>
+                        <input type="file" name="Pro_Foto_Producto" class="form-control">
                     </div>
                     <input class="btn btn-primary" type="submit" name="Aceptar"><br>
                 </form>

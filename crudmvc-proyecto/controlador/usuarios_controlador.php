@@ -13,6 +13,7 @@ class usuarios_controlador{
     public function frmRegistrar(){
         $this->vista->estructura("usuarios/frmRegistrar",true);
     }
+
     public function registrar(){
         extract($_POST);
         $datos["usu_cedula"]     = $usu_cedula;
@@ -23,7 +24,11 @@ class usuarios_controlador{
         $datos["usu_contraseña"] = $usu_contraseña;
         $datos["usu_fecha"]      = $usu_fecha;
         $datos["usu_email"]      = $usu_email;
-        $datos["usu_rol"]        = $usu_rol;
+        if(isset($_SESSION["nombre"])){
+            $datos["usu_rol"]        = $usu_rol;
+        }else{
+            $datos["usu_rol"]        = "Cliente";
+        }
         $r                       = usuarios_modelo::mdlRegistrar($datos);
          if($r > 0){
             if($r > 0){
