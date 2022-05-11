@@ -1,18 +1,42 @@
 $(function () {
 
-    $("#frmRegistrar").submit(function () {
+    $("#frmRegistrar").submit(function (e) {
+        e.preventDefault();
         var url = $(this).attr("action");
         var datos = $(this).serialize();
 
-        $.post(url, datos, function (e) {
-
-            Swal.fire(
-                e.alt,
-                e.mensaje,
-                e.icono
-            );
-            $('#frmRegistrar').trigger("reset");
-        }, 'json');
+        if(frmRegistroU()){
+            $.ajax({
+                data: datos,
+                url: url,
+                dataType: 'json',
+                type: 'post',
+                // se ejecuta antes de enviar el form
+                beforeSend: function () {
+                    Swal.fire({
+                        title: "Cargando..",
+                        text: " ",
+                        buttons: false,
+                        closeOnClickOutside:false,
+                        closeOnEsc:false,
+                        allowEnterKey:false
+                    })
+                },
+                success: function (data) {               
+                    if(data.error == 0){
+                        Swal.fire(
+                            data.alt,
+                            data.mensaje,
+                            data.icono
+                        ).then((result) => {
+                            if (result.isConfirmed) {
+                                location.href="?controlador=inicio&accion=frmLogin"
+                            }
+                          });
+                    }        
+                }
+            });
+        }       
 
         return false;
 

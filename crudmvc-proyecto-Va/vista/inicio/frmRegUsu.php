@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="text-center">
                                         <!-- <i type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</button> -->
-                                        <input class="btn btn-primary" onclick="frmRegistroU()" value="Registrarse" name="Aceptar">
+                                        <input class="btn btn-primary" type="submit"  value="Registrarse" name="Aceptar">
                                     </div>
                                 </form>
                             </div>
@@ -123,7 +123,6 @@
     <!--   Core JS Files   -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script Type="text/javascript" src="public/assets/js/scripts.js"></script>
     <script src="public/assets/js/core/popper.min.js"></script>
     <script src="public/assets/js/core/bootstrap.min.js"></script>
     <script src="public/assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -142,6 +141,7 @@
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="public/assets/js/material-dashboard.min.js?v=3.0.0"></script>
     <script src="recursos\validaciones.js"></script>
+    <script Type="text/javascript" src="public/assets/js/scripts.js"></script>
 </body>
 
 </html>

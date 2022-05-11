@@ -65,7 +65,7 @@ function frmRegistroU() {
                     if (expresiones.usuario.test(document.getElementById("usuaru").value)) {
                         if (expresiones.password.test(document.getElementById("contraseña").value)) {
                             if (expresiones.correo.test(document.getElementById("email").value)) {
-formulario.submit()
+                                return true;
                             }
                         }
                     }
@@ -73,6 +73,7 @@ formulario.submit()
             }
         }
     }
+    return false
 }
 
 

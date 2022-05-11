@@ -29,13 +29,13 @@ class usuarios_controlador{
         }else{
             $datos["usu_rol"]        = "Cliente";
         }
-        $r                       = usuarios_modelo::mdlRegistrar($datos);
+        $r = usuarios_modelo::mdlRegistrar($datos);
          if($r > 0){
-            if($r > 0){
-                // echo "Registro exitoso!";
-               // mail($usu_email, "hsfjkhvsjk", "sdcs $usu_contraseña");
-                echo json_encode(array("mensaje"=>"Registro Exitoso", "icono"=>"success"));
-            }
+            // echo "Registro exitoso!";
+            // mail($usu_email, "hsfjkhvsjk", "sdcs $usu_contraseña");
+            echo json_encode(array("error"=>0, "mensaje"=>"Registro Exitoso", "icono"=>"success"));
+         }else{
+            echo json_encode(array("error"=>1, "mensaje"=>"Ocurrio un error al actualizar", "icono"=>"error"));
          }
         
         
