@@ -63,7 +63,8 @@
                     <div class="input-group input-group-outline my-3">
                     Direccion
                     <input type="text" name="ped_direccion" class="form-control">
-                    </div>                
+                    </div>
+                   
                     <input class="btn btn-primary" type="submit" name="Aceptar"><br>
                  </form>
 
