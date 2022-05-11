@@ -43,8 +43,8 @@
            <p class="card-text"><?php   echo $valor["Pro_Descripcion"]; ?></p>
                    
                         
-           <form action="" method="post" name="flpu" class="frmCarro">
-             <input type="number" required name="cantidad" class="form-control" placeholder="cantidad"><br>
+           <form action="" method="post" class="frmCarro">
+             <input type="number"  name="cantidad" class="form-control" placeholder="cantidad"><br>
 
              <input type="hidden" name="id" value="<?php echo $valor["Pro_Id_Producto"];?>">
              <input type="hidden" name="nombre" value="<?php echo $valor["Pro_Nombre"]; ?>">

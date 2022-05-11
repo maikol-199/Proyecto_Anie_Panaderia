@@ -53,10 +53,6 @@ const validarCampo = (expresion, input) => {
     }
 }
 
-
-
-
-
 function frmRegistroU() {
     if (expresiones.numero.test(document.getElementById("cedulaa").value)) {
         if (expresiones.nombre.test(document.getElementById("nombre").value)) {
