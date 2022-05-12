@@ -6,6 +6,7 @@ $(function () {
         var datos = $(this).serialize();
 
         if(frmRegistroU()){
+            //respuesta del formulario de registro de usuario            
             $.ajax({
                 data: datos,
                 url: url,

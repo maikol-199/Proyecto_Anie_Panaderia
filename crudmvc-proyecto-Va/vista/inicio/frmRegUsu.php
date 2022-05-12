@@ -21,7 +21,18 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="public/assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 </head>
-
+<style>
+    .correcto{
+        color:green;
+        border: solid green;
+        text-shadow: 2px 3px 5px green;
+    }
+    .incorrecto{
+        color:red;
+        text-shadow: 2px 3px 5px red;
+        border:Solid red;
+    }
+</style>
 <body class="bg-gray-200">
     <div class="container position-sticky z-index-sticky top-0">
         <div class="row">
@@ -45,68 +56,64 @@
                             <div class="card-body">
                                 <form role="form" class="text-start" action="?controlador=usuarios&accion=registrar" method="post" id="frmRegistrar">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 formulario__grupo">
                                             <div class="input-group input-group-outline my-3">
                                                 <label class="form-label">Cedula</label>
-                                                <input type="number" name="usu_cedula" class="form-control" required>
+                                                <input id="cedulaa" type="number" name="usu_cedula" class="form-control" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 formulario__grupo">
                                             <div class="input-group input-group-outline my-3">
                                                 <label class="form-label">Nombres</label>
-                                                <input type="text" name="usu_nombre" class="form-control" required>
+                                                <input id="nombre" type="text" name="usu_nombre" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 formulario__grupo">
                                             <div class="input-group input-group-outline my-3">
                                                 <label class="form-label">Apellidos</label>
-                                                <input type="text" name="usu_apellido" class="form-control" required>
+                                                <input id="apellido" type="text" name="usu_apellido" class="form-control" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 formulario__grupo">
                                             <div class="input-group input-group-outline my-3">
                                                 <label class="form-label">Telefono</label>
-                                                <input type="number" name="usu_telefono" class="form-control" required>
+                                                <input type="number" id="telefono" name="usu_telefono" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 formulario__grupo">
                                             <div class="input-group input-group-outline my-3">
                                                 <label class="form-label">Usuario</label>
-                                                <input type="text" name="usu_usuario" class="form-control" required>
+                                                <input type="text" id="usuaru" name="usu_usuario" class="form-control" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 formulario__grupo">
                                             <div class="input-group input-group-outline my-3">
                                                 <label class="form-label">Contraseña</label>
-                                                <input type="password" name="usu_contraseña" class="form-control" required>
+                                                <input type="password" id="contraseña" name="usu_contraseña" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 formulario__grupo">
                                             <div class="input-group input-group-static my-3">
                                                 <label>Fecha Registro</label>
                                                 <input type="datetime-local" name="usu_fecha" class="form-control" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6" formulario__grupo>
                                             <div class="input-group input-group-static my-3">
                                                 <label>Email</label>
-                                                <input type="email" name="usu_email" class="form-control" required>
+                                                <input type="email" id="email" name="usu_email" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <!-- <i type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</button> -->
-<<<<<<< HEAD
-                                        <input class="btn btn-primary" type="submit"  value="Registrarse" name="Aceptar">
-=======
+                                        
                                         <input class="btn btn-primary" type="submit" value="Registrarse" name="Aceptar">
->>>>>>> a4833e424d83798acbc67fbcc50900627011d51f
                                     </div>
                                 </form>
                             </div>
@@ -116,6 +123,7 @@
             </div>
         </div>
     </main>
+
     <!--   Core JS Files   -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

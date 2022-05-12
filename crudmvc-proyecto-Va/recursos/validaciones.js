@@ -5,8 +5,9 @@ const inputs = document.querySelectorAll('#frmRegistrar input');
 
 
 const expresiones = {
+    cedula: /^\d{6,10}$/,
     numero: /^\d{10,10}$/,
-    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
+    usuario: /^[a-zA-Z0-9]+[a-zA-Z0-9-]$/,
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     password: /^.{4,12}$/,
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -14,20 +15,29 @@ const expresiones = {
 }
 
 const validar = (e) => {
-    switch (e.target.type) {
-        case "number":
-            validarCampo(expresiones.numero, e.target);
-
+    switch (e.target.name) {
+        case "usu_cedula":
+            validarCampo(expresiones.cedula, e.target);
             break;
-        case "text":
+        case "usu_nombre":
             validarCampo(expresiones.nombre, e.target);
             break;
-        case "email":
-            validarCampo(expresiones.correo, e.target);
+        case "usu_apellido":
+            validarCampo(expresiones.nombre, e.target);
             break;
-        case "password":
+        case "usu_telefono":
+            validarCampo(expresiones.numero, e.target);
+            break;
+        case "usu_usuario":
+            validarCampo(expresiones.usuario, e.target);
+            break;
+        case "usu_contraseña":
             validarCampo(expresiones.password, e.target);
             break;
+        case "usu_email":
+            validarCampo(expresiones.correo, e.target);
+            break;
+       
     }
 }
 
@@ -54,7 +64,7 @@ const validarCampo = (expresion, input) => {
 }
 
 function frmRegistroU() {
-    if (expresiones.numero.test(document.getElementById("cedulaa").value)) {
+    if (expresiones.cedula.test(document.getElementById("cedulaa").value)) {
         if (expresiones.nombre.test(document.getElementById("nombre").value)) {
             if (expresiones.nombre.test(document.getElementById("apellido").value)) {
                 if (expresiones.telefono.test(document.getElementById("telefono").value)) {
