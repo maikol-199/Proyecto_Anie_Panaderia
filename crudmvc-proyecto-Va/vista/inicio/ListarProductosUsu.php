@@ -1,13 +1,21 @@
 
-<div style="background-color: whitesmoke;">
+<style>
+  
+  .cnt_cnt{
+    box-shadow: 2px 3px 1px gray;
+    width: 35vw;
+    height: 600px;
+    margin: 5px;
+    
+  }
 
-
-
+</style>
+<div style="margin-top:150px;margin:auto; background-color: whitesmoke;box-shadow:2px 3px 5px gray">
 
   <section class="py-5 text-center container" >
-    <div class="row py-lg-5 contenedor">
+    <div   class="row py-lg-5 contenedor">
       
-   <img style="width: 30% ; height: 10% ;" src="public/logoani/PB.PNG" alt="" > 
+   <img style="width: 30% ; height: 10% ;border-radius: 50%;margin:auto" src="public/logoani/PB.PNG" alt="" > 
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light ">Productos</h1>
         <p class="lead text-muted">La empresa ani Pasteleria Ofrece a sus clientes una amplia variedad de productos.</p>
@@ -19,22 +27,22 @@
   </section>
   <hr>
   <hr>
-
+</div>
 
 
 
   
-<div class="row" >
+<div  class="row" >
 
 <?php foreach ($this->datos as $valor){ 
   
    $foto = $valor["Pro_Foto_Producto"];
   ?>
-    <div class="col-lg-4" >
-    <div class="card shadow-sm">
-      <div class="card" style="width: 26rem;">
+    <div style="width: 30%;" class=" col-lg-4" >
+    <div class="cnt_cnt card shadow-sm">
+      
        
-        <?php echo "<img style='width='100%' height='225' '; src='public/assets/img/fotos_productos/$foto'>" ?> 
+        <?php echo "<img style='width='40%' height='225' '; src='public/assets/img/fotos_productos/$foto'>" ?> 
        
            <div class="card-body" >
            
@@ -43,10 +51,10 @@
            <p class="card-text"><?php   echo $valor["Pro_Descripcion"]; ?></p>
                    
                         
-           <form action="" method="post" class="frmCarro">
-             <input type="number"  name="cantidad" class="form-control" placeholder="cantidad"><br>
+           <form  action="" method="post" class="frmCarro">
+             <input type="number" required  name="cantidad" class="form-control" placeholder="cantidad"><br>
 
-             <input type="hidden" name="id" value="<?php echo $valor["Pro_Id_Producto"];?>">
+             <input type="hidden"  name="id" value="<?php echo $valor["Pro_Id_Producto"];?>">
              <input type="hidden" name="nombre" value="<?php echo $valor["Pro_Nombre"]; ?>">
              <input type="hidden" name="descripcion" value="<?php echo $valor["Pro_Descripcion"]; ?>">
              <input type="hidden" name="foto" value="<?php echo $valor["Pro_Foto_Producto"]; ?>" >
@@ -61,7 +69,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
 
   <?php  } ?>
   

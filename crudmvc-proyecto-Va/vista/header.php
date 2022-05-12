@@ -247,20 +247,20 @@
 
             <h2>INNOVACIÓN</h2>
             <p>Apostamos por la innovación y el desarrollo de nuevos productos, diferenciales, que destaquen tanto por su sabor y calidad como por su fórmula innovadora. También trabajamos en descubrir productos funcionales que nos ayuden.</p>
-            <p><a class="btn btn-secondary" href="#">Ver Detalles &raquo;</a></p>
+            <!-- <p><a class="btn btn-secondary" href="#">Ver Detalles &raquo;</a></p> -->
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img src="public/logoani/B.jpg" alt="">
             <h2>PERSONALIZACIÓN</h2>
             <p>En nuestros establecimientos personalizamos cualquier tipo de dulce, sobre todo nuestras tartas, en las que incluimos nombres, fotos, objetos de chocolate y todo lo que quieras.</p>
-            <p><a class="btn btn-secondary" href="#">Ver Detalles &raquo;</a></p>
+            <!-- <p><a class="btn btn-secondary" href="#">Ver Detalles &raquo;</a></p> -->
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img src="public/logoani/C.jpg" alt="">
 
             <h2>PEDIDOS A DOMICILIO</h2>
             <p>Ofrecemos un servicio rápido y seguro para el transporte de nuestros productos al lugar que usted desee. Además, de disponer de un servicio a domicilio para llevarte el pan a casa, también comercializamos nuestros productos por el resto de la provincia.</p>
-            <p><a class="btn btn-secondary" href="#">Ver Detalles &raquo;</a></p>
+            <!-- <p><a class="btn btn-secondary" href="#">Ver Detalles &raquo;</a></p> -->
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
@@ -273,8 +273,8 @@
             <h2 class="featurette-heading">Un conjunto de pequeños detalles. <span class="text-muted">Pensados para ti.</span></h2>
             <p class="lead">Cuando compras un producto personalizado estás pagando por algo único, algo que nadie más tendrá. No lo des por menos</p>
           </div>
-          <div class="col-md-5">
-            <img src="public/logoani/pA.jpg" width="500" height="500" alt="">
+          <div  class="col-md-5">
+            <img style="box-shadow:3px 5px 10px black" src="public/logoani/pA.jpg" width="500" height="500" alt="">
           </div>
         </div>
 
@@ -282,11 +282,11 @@
 
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+            <h2 class="featurette-heading">Oh si!, Aqui es: <span class="text-muted">podras encontrar los mejores pasteles.</span></h2>
+            <p class="lead">La mejor calidad para tu cumpleaños se encuentra aqui. <br>¡que esperas para dar el mejor regalo!</p>
           </div>
           <div class="col-md-5 order-md-1">
-            <img src="public/logoani/pC.jpg" width="450" height="450" alt="">
+            <img style="box-shadow:3px 5px 10px black" src="public/logoani/pC.jpg" width="450" height="450" alt="">
           </div>
         </div>
 
@@ -294,11 +294,11 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+            <h2 class="featurette-heading">La mejor decisión, tu mejor decisión. <span class="text-muted">Que esperas para probar un bocado de tu pedido?.</span></h2>
+            <p class="lead">¡No te arrepentiras, manejamos los mejores products, a un excelente precio!.</p>
           </div>
           <div class="col-md-5">
-            <img src="public/logoani/PB.PNG" width="500" height="500" alt="">
+            <img style="box-shadow:3px 5px 10px black" src="public/logoani/PB.PNG" width="500" height="500" alt="">
           </div>
         </div>
 

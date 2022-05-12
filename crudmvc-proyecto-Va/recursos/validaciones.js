@@ -79,6 +79,7 @@ function frmRegistroU() {
             }
         }
     }
+    alert("verifique que todos los campos sean correctos")
     return false
 }
 
